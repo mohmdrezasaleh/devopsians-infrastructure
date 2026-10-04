@@ -6,5 +6,6 @@ provider "registry.terraform.io/hashicorp/aws" {
   constraints = "6.7.0"
   hashes = [
     "h1:MR1e3FM/ZMHBaUOsLJu2XIjkbogmh5q5IV/N73zGX14=",
+    "h1:Q3SS9jX9yULICUCsZVzJ743/n8VkUqkeUJ86+fbuar8=",
   ]
 }
