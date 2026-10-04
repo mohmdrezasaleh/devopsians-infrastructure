@@ -8,9 +8,9 @@ module "storage" {
     "tfstate"
   ]
 
-  lifecycle_days = 7
+  #lifecycle_days = 7
 
-  lifecycle_buckets = [
-    "k3s-backups"
-  ]
+  #lifecycle_buckets = [
+  #  "k3s-backups"
+  #]
 }
