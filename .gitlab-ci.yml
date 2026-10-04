@@ -1,0 +1,30 @@
+stages:
+  - validate
+  - plan
+
+variables:
+  TF_IN_AUTOMATION: "true"
+  TF_INPUT: "false"
+
+terraform_fmt:
+  stage: validate
+  script:
+    - terraform fmt -check -recursive
+
+terraform_validate:
+  stage: validate
+  script:
+    - terraform init -backend=false
+    - terraform validate
+
+terraform_plan:
+  stage: plan
+  script:
+    - terraform init
+    - terraform plan -out=tfplan
+  artifacts:
+    paths:
+      - tfplan
+    expire_in: 1 week
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
